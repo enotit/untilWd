@@ -19,7 +19,7 @@ def _main(message):
     elif r.days in [2, 3, 4]:
         mes = f'Осталось: {r.days} дня, {other}'
     else:
-        mes = f'Осталось: {r.days} дней, {other}'
+        mes = f'Осталось: {r.days - 7 if r.days >= 7 else r.days } дней, {other}'
     bot.send_message(message.from_user.id, mes)
 
 
